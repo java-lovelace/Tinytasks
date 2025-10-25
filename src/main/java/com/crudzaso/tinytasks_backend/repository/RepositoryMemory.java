@@ -6,10 +6,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * Evitamos el choque de nombres con la anotación @Repository de Spring usando
- * el nombre totalmente calificado en la anotación.
- */
+
 @org.springframework.stereotype.Repository
 public class RepositoryMemory implements com.crudzaso.tinytasks_backend.repository.Repository {
 
@@ -17,7 +14,7 @@ public class RepositoryMemory implements com.crudzaso.tinytasks_backend.reposito
     private final AtomicLong seq = new AtomicLong(0);
 
     public RepositoryMemory() {
-        // Datos demo (opcional)
+
         save(new Task(null, "Learn Spring Boot", false));
         save(new Task(null, "Wire up the frontend", false));
     }
